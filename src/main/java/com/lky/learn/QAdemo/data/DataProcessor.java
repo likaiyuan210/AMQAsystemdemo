@@ -22,7 +22,7 @@ public class DataProcessor {
         TokenStream ts = analyzer.tokenStream("", reader);
         CharTermAttribute term = ts.getAttribute(CharTermAttribute.class);
         StringBuffer buffer = new StringBuffer();
-
+        ts.reset();
         while(ts.incrementToken()){
             buffer.append(term.toString()+" ");
         }
