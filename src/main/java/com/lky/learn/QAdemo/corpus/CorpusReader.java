@@ -1,5 +1,7 @@
 package com.lky.learn.QAdemo.corpus;
 
+import com.lky.learn.QAdemo.data.PreProcessor;
+
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -53,7 +55,9 @@ public class CorpusReader {
     }
 
     public static void main(String[] args) throws Exception {
-        CorpusReader corpusReader = new CorpusReader();
+        String question = "一号发动机故障";
+        //CorpusReader corpusReader = new CorpusReader();
+        System.out.print(PreProcessor.segment(question));
     }
 
 

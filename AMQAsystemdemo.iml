@@ -33,6 +33,6 @@
     <orderEntry type="library" name="Maven: org.glassfish:javax.json:1.0.4" level="project" />
     <orderEntry type="library" name="Maven: org.slf4j:slf4j-api:1.7.12" level="project" />
     <orderEntry type="library" name="Maven: com.google.protobuf:protobuf-java:3.2.0" level="project" />
-    <orderEntry type="library" name="Maven: com.lky.exercise:ikanalyzer:2016_u6" level="project" />
+    <orderEntry type="library" name="Maven: com.lky.exercise:ikanalyzer:2012FF_u1" level="project" />
   </component>
 </module>
