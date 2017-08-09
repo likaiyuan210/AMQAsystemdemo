@@ -1,14 +1,13 @@
 package com.lky.learn.QAdemo.corpus;
 
+import com.lky.learn.QAdemo.answer.AnswerGetter;
+import com.lky.learn.QAdemo.data.DataProcessor;
 import com.lky.learn.QAdemo.data.PreProcessor;
 
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
-import java.util.Iterator;
-import java.util.Map;
-import java.util.Set;
-import java.util.TreeMap;
+import java.util.*;
 
 public class CorpusReader {
     String url = null;
@@ -44,6 +43,7 @@ public class CorpusReader {
             corpus.put(linesplit[0],temp);
             line = bufferedReader.readLine();
         }
+        /*
         //打印
         Set<Map.Entry<String, Map<String, String>>> corpusSet = corpus.entrySet();
         for (Iterator<Map.Entry<String, Map<String, String>>> it = corpusSet.iterator(); it.hasNext(); )
@@ -51,13 +51,24 @@ public class CorpusReader {
             Map.Entry<String, Map<String, String>> me = it.next();
             System.out.printf("%s|%s\n", me.getKey(),me.getValue().toString());
         }
+        */
 
     }
 
+    public ArrayList<String> getQuestionList(){
+        return PreProcessor.getQuestionsList(corpus);
+    }
+
+    public Map<String, Map<String, String>> getCorpus() {
+        return corpus;
+    }
+
     public static void main(String[] args) throws Exception {
-        String question = "一号发动机故障";
-        //CorpusReader corpusReader = new CorpusReader();
-        System.out.print(PreProcessor.segment(question));
+        String question = "机组警告系统1号发动机加速卡故障";
+        CorpusReader corpusReader = new CorpusReader();
+        AnswerGetter answerGetter = new AnswerGetter(question);
+        answerGetter.getAnswer(corpusReader);
+
     }
 
 

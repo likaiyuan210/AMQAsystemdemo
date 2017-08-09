@@ -10,6 +10,11 @@ import java.util.Set;
  * Created by lky on 2017/8/8.
  */
 public class PreProcessor {
+    /**
+     * 获取知识库问题清单
+     * @param corpus
+     * @return
+     */
     public static ArrayList<String> getQuestionsList(Map<String, Map<String, String>> corpus){
         ArrayList<String> questionList = new ArrayList<String>();
         Set<Map.Entry<String, Map<String, String>>> corpusSet = corpus.entrySet();
@@ -21,6 +26,12 @@ public class PreProcessor {
         return questionList;
     }
 
+    /**
+     * 中文分词
+     * @param text
+     * @return
+     * @throws IOException
+     */
     public static String segment(String text) throws IOException {
         StringBuffer str = new StringBuffer();
         String seg = DataProcessor.segChinese(text);
